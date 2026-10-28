@@ -81,7 +81,7 @@ class syntax_plugin_toctweak_metatoc extends DokuWiki_Syntax_Plugin {
 
         switch ($format) {
             case 'metadata':
-                if ($id != $INFO['id']) { // current page
+                if (!isset($INFO['id']) || $id != $INFO['id']) { // current page
                     // set dependency info for PARSER_CACHE_USE event handler
                     $renderer->meta['relation']['toctweak'][] = metaFN($id,'.meta');
                 }
