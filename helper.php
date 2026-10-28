@@ -93,7 +93,7 @@ class helper_plugin_toctweak extends DokuWiki_Plugin {
 
         // retrieve TableOfContents from metadata
         if ($id == $INFO['id']) {
-            $toc = $INFO['meta']['description']['tableofcontents'];
+            $toc = $INFO['meta']['description']['tableofcontents'] ?? null;
         } else {
             $toc = p_get_metadata($id,'description tableofcontents');
         }
